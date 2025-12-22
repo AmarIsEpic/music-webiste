@@ -72,7 +72,7 @@ function createSongItem(albumId, songName) {
     li.innerHTML = `<div class="song-name">${songName}</div>`;
 
     li.addEventListener('click', () => {
-        selectedSong(albumId, songName);
+        selectSong(albumId, songName);
     });
 
     return li;
@@ -93,27 +93,27 @@ function navigateToHome() {
     homePage.classList.add('active');
 }
 
-function selectSong() {
-    const existingIndex = selectSongs.findIndex(
+function selectSong(albumId, songName) {
+    const existingIndex = selectedSongs.findIndex(
         s => s.albumId === albumId && s.songName === songName
     );
 
-    if(exitingIndex === -1) {
-        selectSongs.push({ albumId, songName })
+    if(existingIndex === -1) {
+        selectedSongs.push({ albumId, songName });
     }
     else {
-        selectSongs.splice(existingIndex, 1);
+        selectedSongs.splice(existingIndex, 1);
     }
     updateSelectedCount();
     navigateToHome();
 }
 
-function updateSelectedCount(albumId, songName) {
+function updateSelectedCount() {
     const count = selectedSongs.length;
     selectedCountSpan.textContent = count;
 
     if(count > 0){
-        continueBtn.ariaDisabled = false;
+        continueBtn.disabled = false;
     } else {
         continueBtn.disabled = true;
     }
@@ -125,8 +125,8 @@ function setupEventListeners() {
     });
 
     continueBtn.addEventListener('click', () => {
-        if(selectSongs.length > 0) {
-            console.log('Continue clicked with songs:', selectSongs);
+        if(selectedSongs.length > 0) {
+            console.log('Continue clicked with songs:', selectedSongs);
             alert('Continue functionality coming soon');
         }
     });
@@ -139,16 +139,16 @@ if (document.readyState === 'loading') {
 }
 
 function getSelectedSongs() {
-    return [...selectSongs];
+    return [...selectedSongs];
 }
 
 function clearSelections() {
-    selectSongs = [];
+    selectedSongs = [];
     updateSelectedCount();
 }
 
 function isSongSelected(albumId, songName) {
-    return selectSongs.some(
+    return selectedSongs.some(
         s => s.albumId === albumId && s.songName === songName
     );
 }
