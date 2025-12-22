@@ -210,16 +210,27 @@ const albums = [
         title: "S&M",
         cover: 'Images/S&m.png',
         songs: [
-            'Hit the Lights',
-            'The Four Horsemen',
-            'Motorbreath',
-            'Jump in the Fire',
-            'Whiplash',
-            'Phantom Lord',
-            'No Remorse',
-            'Seek & Destroy',
-            'Metal Militia'
+            'The Ecstasy of Gold',
+            'The Call of Ktulu',
+            'Master of Puppets',
+            'Of Wolf and Man',
+            'The Thing That Should Not Be',
+            'Fuel',
+            'The Memory Remains',
+            'No Leaf Clover',
+            'Hero of the Day',
+            "Devil's Dance",
+            'Bleeding Me',
+            'Nothing Else Matters',
+            'Until It Sleeps',
+            'For Whom the Bell Tolls',
+            'Human',
+            'Wherever I May Roam',
+            'Outlaw Torn',
+            'Sad but True',
+            'One',
+            'Enter Sandman',
+            'Battery'
         ]
-    },
-
-]
+    }
+];
