@@ -27,7 +27,7 @@ body::before {
     opacity: 0.03;
     z-index: 1;
     pointer-events: none;
-    background-image: url(Background.svg);
+    background-image: url(Images/Background.svg);
 }
 
 .page {
