@@ -217,3 +217,100 @@ body::before {
 }
 
 /* Footer */
+
+.home-footer {
+    padding: 2rem;
+    background: linear-gradient(180deg, transparent, #141414 30%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    position: relative;
+    z-index: 10;
+}
+
+.selected-count {
+    font-family: 'Helvetica Neue', 'Arial', sans-serif;
+    font-size: 0.95rem;
+    letter-spacing: 0.1em;
+    color: #787878;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.selected-count span {
+    color: #ff6b35;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.continue-btn {
+    position: relative;
+    padding: 1rem 3rem;
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #0a0a0a;
+    background: #ff6b35;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow:
+    0 4px 16px rgba(0, 0, 0, 0.9),
+    0 0 20px rgba(255,107,53,0.3);
+    clip-path: polygon(
+        8px 0,
+        100% 0,
+        100% calc(100% - 8px),
+        calc(100% - 8px) 100%,
+        0 100%,
+        0 8px
+    );
+}
+
+.continue-btn span {
+    position: relative;
+    z-index: 2;
+}
+
+.btn-glow {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent,
+    rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.continue-btn:hover .btn-glow {
+    left: 100%;
+}
+
+.continue-btn:hover {
+    background: #d32f2f;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.9),
+    0 0 40px rgba(255, 107, 53, 0.5);
+}
+
+.continue-btn:active {
+    transform: translateY(0);
+}
+
+.continue-btn:disabled {
+    background: #2a2a2a;
+    color: #3d3d3d;
+    cursor: not-allowed;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.9);
+    opacity: 0.5;
+}
+
+.continue-btn:disabled:hover {
+    transform: none;
+    background: #2a2a2a;
+}
