@@ -524,8 +524,7 @@ body::before {
     }
 
     .logo {
-        font-size: 2.5rem;
-        letter-spacing: 0.2rem;
+        font-size: clamp(4rem, 8vw, 5rem);
     }
 
     .album-name {
