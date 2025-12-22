@@ -72,8 +72,83 @@ function createSongItem(albumId, songName) {
     li.innerHTML = `<div class="song-name">${songName}</div>`;
 
     li.addEventListener('click', () => {
-        selectedSongs(albumId, songName);
+        selectedSong(albumId, songName);
     });
 
     return li;
+}
+
+function navigateToAlbum(albumId) {
+    currentAlbumId = albumId;
+    renderSongList(albumId);
+
+    homePage.classList.remove('active');
+    albumPage.classList.add('active');
+}
+
+function navigateToHome() {
+    currentAlbumId = null;
+
+    albumPage.classList.remove('active');
+    homePage.classList.add('active');
+}
+
+function selectSong() {
+    const existingIndex = selectSongs.findIndex(
+        s => s.albumId === albumId && s.songName === songName
+    );
+
+    if(exitingIndex === -1) {
+        selectSongs.push({ albumId, songName })
+    }
+    else {
+        selectSongs.splice(existingIndex, 1);
+    }
+    updateSelectedCount();
+    navigateToHome();
+}
+
+function updateSelectedCount(albumId, songName) {
+    const count = selectedSongs.length;
+    selectedCountSpan.textContent = count;
+
+    if(count > 0){
+        continueBtn.ariaDisabled = false;
+    } else {
+        continueBtn.disabled = true;
+    }
+}
+
+function setupEventListeners() {
+    backBtn.addEventListener('click', () => {
+        navigateToHome();
+    });
+
+    continueBtn.addEventListener('click', () => {
+        if(selectSongs.length > 0) {
+            console.log('Continue clicked with songs:', selectSongs);
+            alert('Continue functionality coming soon');
+        }
+    });
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+} else {
+    init();
+}
+
+function getSelectedSongs() {
+    return [...selectSongs];
+}
+
+function clearSelections() {
+    selectSongs = [];
+    updateSelectedCount();
+}
+
+function isSongSelected(albumId, songName) {
+    return selectSongs.some(
+        s => s.albumId === albumId && s.songName === songName
+    );
 }
