@@ -36,4 +36,44 @@ function createAlbumCard(album) {
     </div>
     <div class="album-name">${album.title}</div>
     `;
+
+    card.addEventListener('click', () => {
+        navigateToAlbum(album.id);
+    });
+
+    return card;
+}
+
+function renderSongList(albumId) {
+    const album = albums.find(a => a.id === albumId);
+    if(!album) return;
+
+    songList.innerHTML = '';
+    albumTitle.textContent = album.title;
+
+    album.songs.forEach(songName => {
+        const songItem = createSongItem(albumId, songName);
+        songList.appendChild(songItem);
+    });
+}
+
+function createSongItem(albumId, songName) {
+    const li = document.createElement('li');
+    li.className = 'song-item';
+
+    const isSelected = selectedSongs.some(
+        s => s.albumId === albumId && s.songName === songName
+    );
+
+    if(isSelected) {
+        li.classList.add('selected');
+    }
+
+    li.innerHTML = `<div class="song-name">${songName}</div>`;
+
+    li.addEventListener('click', () => {
+        selectedSongs(albumId, songName);
+    });
+
+    return li;
 }
