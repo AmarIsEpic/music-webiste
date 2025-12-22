@@ -459,3 +459,43 @@ body::before {
     color: white;
     font-weight: 600;
 }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .album-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 2rem;
+    }
+
+    .main-header {
+        padding: 2rem 1rem;
+    }
+
+    .album-grid-container, .songs-container {
+        padding: 2rem 1rem;
+    }
+    
+    .continue-btn {
+        padding: 1rem 1.5rem;
+    }
+
+    .song-name {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .album-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .logo {
+        font-size: 2.5rem;
+        letter-spacing: 0.2rem;
+    }
+
+    .album-name {
+        font-size: 0.85rem;
+    }
+}
