@@ -84,6 +84,8 @@ function navigateToAlbum(albumId) {
 
     homePage.classList.remove('active');
     albumPage.classList.add('active');
+
+    window.scrollTo(0,0);
 }
 
 function navigateToHome() {
@@ -91,6 +93,8 @@ function navigateToHome() {
 
     albumPage.classList.remove('active');
     homePage.classList.add('active');
+
+    window.scrollTo(0,0);
 }
 
 function selectSong(albumId, songName) {
