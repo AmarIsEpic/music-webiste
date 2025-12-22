@@ -232,7 +232,7 @@ body::before {
 .selected-count {
     font-family: 'Helvetica Neue', 'Arial', sans-serif;
     font-size: 0.95rem;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.15em;
     color: #787878;
     text-transform: uppercase;
     font-weight: 500;
@@ -241,7 +241,7 @@ body::before {
 .selected-count span {
     color: #ff6b35;
     font-weight: 700;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 .continue-btn {
@@ -313,4 +313,58 @@ body::before {
 .continue-btn:disabled:hover {
     transform: none;
     background: #2a2a2a;
+}
+
+/* Album page header*/
+
+.album-header {
+    padding: 2rem;
+    position: relative;
+    z-index: 10;
+}
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.5rem;
+    font-family: 'Helvetica Neue', 'Arial',  sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #b8b8b8;
+    background: #1c1c1c;
+    border: 1px solid #3d3d3d;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 2rem;
+}
+
+.back-arrow {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.back-btn:hover {
+    background: #2a2a2a;
+    border-color: #ff6b35;
+    color: #ff6b35;
+    transform: translateX(-4px);
+}
+
+.back-btn:hover .back-arrow {
+    transform: translate(-4px);
+}
+
+.album-title {
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 900;
+    letter-spacing: 0.15rem;
+    text-transform: uppercase;
+    color: white;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 10px rgba(255, 107, 53, 0.3),
+    0 4px 8px rgba(0, 0, 0, 0.9);
 }
