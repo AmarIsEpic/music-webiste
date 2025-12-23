@@ -147,6 +147,43 @@ function renderSongList(albumId) {
     });
 }
 
+function renderSelectedSongs() {
+    const container = document.getElementById('selected-songs-container');
+    const list = document.getElementById('selected-songs-list');
+
+    list.innerHTML = '';
+
+    if(selectedSongs.length === 0) {
+        container.style.display = 'none';
+        return;
+    }
+
+    container.style.display = 'block';
+
+    selectedSongs.forEach((song, index) => {
+        const li = document.createElement('li');
+        li.className = 'selected-song-item';
+
+        li.innerHTML = `
+        <span class="selected-song-number">${index + 1}.</span>
+        <span class="selected-song-name">${song.songName}</span>
+        <button class="selected-song-remove" data-index="${index}">✕</button>`;
+
+        const removeBtn = li.querySelector('.selected-song-remove');
+        removeBtn.addEventListener('click', () => {
+            removeSongFromHome(index);
+        });
+
+        list.appendChild(li);
+    });
+}
+
+function removeSongFromHome(index) {
+    selectedSongs.splice(index, 1);
+    updateSelectedCount();
+    renderSelectedSongs();
+}
+
 function createSongItem(albumId, song) {
     const li = document.createElement('li');
     li.className = 'song-item';
@@ -211,6 +248,7 @@ function selectSong(albumId, song) {
     }
 
     updateSelectedCount();
+    renderSelectedSongs();
     navigateToHome();
 }
 
@@ -322,6 +360,7 @@ function getSelectedSongs() {
 function clearSelections() {
     selectedSongs = [];
     updateSelectedCount();
+    renderSelectedSongs();
 }
 
 function isSongSelected(albumId, songName) {
