@@ -4,15 +4,15 @@ const albums = [
         title: "Kill 'em all",
         cover: 'Images/Killemall.jpg',
         songs: [
-            'Hit the Lights',
-            'The Four Horsemen',
-            'Motorbreath',
-            'Jump in the Fire',
-            'Whiplash',
-            'Phantom Lord',
-            'No Remorse',
-            'Seek & Destroy',
-            'Metal Militia'
+            { name: 'Hit the Lights', categories: ['energetic', 'aggressive'] }
+            { name: 'The Four Horsemen', categories: ['epic', 'aggressive'] }
+            { name: 'Motorbreath', categories: ['energetic', 'rebellious'] }
+            { name: 'Jump in the Fire', categories: ['energetic', 'rebellious'] }
+            { name: 'Whiplash', categories: ['aggressive', 'rebellious'] }
+            { name: 'Phantom Lord', categories: ['aggressive', 'dark'] }
+            { name: 'No Remorse', categories: ['aggressive', 'dark'] }
+            { name: 'Seek & Destroy', categories: ['rebellious', 'energetic'] }
+            { name: 'Metal Militia', categories: ['aggressive', 'rebellious'] }
         ]
     },
 
