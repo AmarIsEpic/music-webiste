@@ -21,7 +21,7 @@
 .popup {
     background: #1c1c1c;
     border: 2px solid #ff6b35;
-    max-width: 700px;
+    max-width: 800px;
     width: 100%;
     max-height: 90vh;
     overflow-y: auto;
@@ -87,13 +87,13 @@
         #ff6b35 80%,
         transparent
     );
-    margin: 1.5rem 0;
+    margin: 2rem 0;
     box-shadow: 0 0 10px rgba(255,107,53,0.2);
 }
 
 .popup-title {
     font-family: 'Impact', 'Arial Black', sans-serif;
-    font-size: 2rem;
+    font-size: 2.5rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: #ff6b35;
@@ -104,21 +104,24 @@
 
 .popup-tagline {
     font-family: 'Helvetica Neue', 'Arial', sans-serif;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     font-style: italic;
     color: #b8b8b8;
     text-align: center;
     line-height: 1.6;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .popup-description {
     font-family: 'Helvetica Neue', 'Arial', sans-serif;
-    font-size: 1%;
+    font-size: 1.1rem;
     color: #b8b8b8;
     text-align: center;
-    line-height: 1.6;
-    margin-bottom: 1rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .popup-recommendations-title {
@@ -128,32 +131,34 @@
     text-transform: uppercase;
     color: #787878;
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .popup-recommendations {
     list-style: none;
     text-align: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .popup-recommendations li {
     font-family: 'Helvetica Neue', 'Arial', sans-serif;
     font-size: 1rem;
     color: #b8b8b8;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
+    letter-spacing: 0.05em;
 }
 
 .popup-buttons {
     display: flex;
     justify-content: center;
     gap: 1rem;
+    margin-top: 2rem;
 }
 
 .popup-btn {
-    padding: 0.8rem 2rem;
+    padding: 1rem 2.5rem;
     font-family: 'Impact', 'Arial Black',sans-serif;
-    font-size: 1rem;
+    font-size: 1.1rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     border: none;
