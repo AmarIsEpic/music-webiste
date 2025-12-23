@@ -2,7 +2,7 @@ const personalities = {
     'thrasher' : {
         title: 'THE THRASHER',
         taglines: [
-            'Pure adrenaline runs through your venis',
+            'Pure adrenaline runs through your veins',
             'Speed is your religion, chaos is your church',
             'You were born in a mosh pit'
         ],
@@ -11,7 +11,7 @@ const personalities = {
             'Slow songs put you to sleep. You need that raw, unfiltered energy that makes your blood boil and your fists pump. The faster, the louder, the better—that\'s your motto.',
             'You don\'t just listen to Metallica—you feel it in your bones. Every blast beat is a heartbeat, every riff is a battle cry. Peace and quiet? Never heard of it.'
         ],
-        recommendations: ['Damege, Inc', 'Dyres Eve', 'Spit Out the Bone']
+        recommendations: ['Damage, Inc', 'Dyers Eve', 'Spit Out the Bone']
     },
 
         'dark_soul' : {
@@ -75,7 +75,7 @@ const personalities = {
     },
 
         'romanticist' : {
-        title: 'THE REBEL',
+        title: 'THE ROMANTICIST',
         taglines: [
             'Emotions are your superpower',
             'You feel everything, deeply',

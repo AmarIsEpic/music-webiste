@@ -4,14 +4,14 @@ const albums = [
         title: "Kill 'em all",
         cover: 'Images/Killemall.jpg',
         songs: [
-            { name: 'Hit the Lights', categories: ['energetic', 'aggressive'] }
-            { name: 'The Four Horsemen', categories: ['epic', 'aggressive'] }
-            { name: 'Motorbreath', categories: ['energetic', 'rebellious'] }
-            { name: 'Jump in the Fire', categories: ['energetic', 'rebellious'] }
-            { name: 'Whiplash', categories: ['aggressive', 'rebellious'] }
-            { name: 'Phantom Lord', categories: ['aggressive', 'dark'] }
-            { name: 'No Remorse', categories: ['aggressive', 'dark'] }
-            { name: 'Seek & Destroy', categories: ['rebellious', 'energetic'] }
+            { name: 'Hit the Lights', categories: ['energetic', 'aggressive'] },
+            { name: 'The Four Horsemen', categories: ['epic', 'aggressive'] },
+            { name: 'Motorbreath', categories: ['energetic', 'rebellious'] },
+            { name: 'Jump in the Fire', categories: ['energetic', 'rebellious'] },
+            { name: 'Whiplash', categories: ['aggressive', 'rebellious'] },
+            { name: 'Phantom Lord', categories: ['aggressive', 'dark'] },
+            { name: 'No Remorse', categories: ['aggressive', 'dark'] },
+            { name: 'Seek & Destroy', categories: ['rebellious', 'energetic'] },
             { name: 'Metal Militia', categories: ['aggressive', 'rebellious'] }
         ]
     },
@@ -21,14 +21,14 @@ const albums = [
         title: "Ride the lightning",
         cover: 'Images/Ridethelightning.jpg',
         songs: [
-            'Fight Fire with Fire',
-            'Ride the Lightning',
-            'From Whom the Bell Tolls',
-            'Fade to Black',
-            'Trapped Under Ice',
-            'Escape',
-            'Creeping Death',
-            'The Call of Ktulu',
+            { name: 'Fight Fire with Fire', categories: ['aggressive', 'rebellious'] },
+            { name: 'Ride the Lightning', categories: ['epic', 'dark'] },
+            { name: 'For Whom the Bell Tolls', categories: ['classic', 'dark'] },
+            { name: 'Fade to Black', categories: ['melancholic', 'introspective'] },
+            { name: 'Trapped Under Ice', categories: ['aggressive', 'energetic'] },
+            { name: 'Escape', categories: ['energetic', 'rebellious'] },
+            { name: 'Creeping Death', categories: ['dark', 'aggressive'] },
+            { name: 'The Call of Ktulu', categories: ['epic', 'introspective'] }
         ]
     },
 
@@ -37,14 +37,14 @@ const albums = [
         title: "Master of puppets",
         cover: 'Images/Masterofpuppets.png',
         songs: [
-            'Battery',
-            'Master of Puppets',
-            'The Thing That Should Not Be',
-            'Welcome Home (Sanitarium)',
-            'Disposable Heroes',
-            'Leper Messiah',
-            'Orion',
-            'Damage, Inc.',
+            { name: 'Battery', categories: ['aggressive', 'classic'] },
+            { name: 'Master of Puppets', categories: ['epic', 'classic'] },
+            { name: 'The Thing That Should Not Be', categories: ['dark', 'introspective'] },
+            { name: 'Welcome Home (Sanitarium)', categories: ['melancholic', 'epic'] },
+            { name: 'Disposable Heroes', categories: ['aggressive', 'rebellious'] },
+            { name: 'Leper Messiah', categories: ['dark', 'aggressive'] },
+            { name: 'Orion', categories: ['epic', 'introspective'] },
+            { name: 'Damage, Inc.', categories: ['aggressive', 'energetic'] }
         ]
     },
 
@@ -53,15 +53,15 @@ const albums = [
         title: "...and justice for all",
         cover: 'Images/Justiceforall.png',
         songs: [
-            'Blackened',
-            '...And Justice for All',
-            'Eye of the Beholder',
-            'One',
-            'The Shortest Straw',
-            'Harvester of Sorrow',
-            'The Frayed Ends of Sanity',
-            'To Live Is to Die',
-            'Dyers Eve'
+            { name: 'Blackened', categories: ['aggressive', 'classic'] },
+            { name: '...And Justice for All', categories: ['epic', 'introspective'] },
+            { name: 'Eye of the Beholder', categories: ['rebellious', 'aggressive'] },
+            { name: 'One', categories: ['melancholic', 'classic'] },
+            { name: 'The Shortest Straw', categories: ['aggressive', 'dark'] },
+            { name: 'Harvester of Sorrow', categories: ['dark', 'melancholic'] },
+            { name: 'The Frayed Ends of Sanity', categories: ['aggressive', 'introspective'] },
+            { name: 'To Live Is to Die', categories: ['epic', 'introspective'] },
+            { name: 'Dyers Eve', categories: ['aggressive', 'rebellious'] }
         ]
     },
 
@@ -70,18 +70,18 @@ const albums = [
         title: "Metallica (the black album)",
         cover: 'Images/Blackalbum.jpg',
         songs: [
-            'Enter Sandman',
-            'Sad but True',
-            'Holier Than Thou',
-            'The Unforgiven',
-            'Wherever I May Roam',
-            "Don't Tread on Me",
-            'Through the Never',
-            'Nothing Else Matters',
-            'Of Wolf and Man',
-            'The God that Failed',
-            'My Friend of Misery',
-            'The Struggle Within'
+            { name: 'Enter Sandman', categories: ['classic', 'energetic'] },
+            { name: 'Sad but True', categories: ['dark', 'classic'] },
+            { name: 'Holier Than Thou', categories: ['rebellious', 'aggressive'] },
+            { name: 'The Unforgiven', categories: ['melancholic', 'classic'] },
+            { name: 'Wherever I May Roam', categories: ['dark', 'introspective'] },
+            { name: 'Don\'t Tread on Me', categories: ['rebellious', 'energetic'] },
+            { name: 'Through the Never', categories: ['aggressive', 'energetic'] },
+            { name: 'Nothing Else Matters', categories: ['melancholic', 'classic'] },
+            { name: 'Of Wolf and Man', categories: ['dark', 'energetic'] },
+            { name: 'The God That Failed', categories: ['dark', 'introspective'] },
+            { name: 'My Friend of Misery', categories: ['melancholic', 'introspective'] },
+            { name: 'The Struggle Within', categories: ['aggressive', 'introspective'] }
         ]
     },
 
@@ -90,20 +90,20 @@ const albums = [
         title: "Load",
         cover: 'Images/Load.png',
         songs: [
-            "Ain't My Bitch",
-            '2 X 4',
-            'The House Jack Built',
-            'Until It Sleeps',
-            'King Nothing',
-            'Hero of the Day',
-            'Bleeding Me',
-            'Cure',
-            'Poor Twisted Me',
-            'Wasting My Hate',
-            'Mama Said',
-            'Thorn Within',
-            'Ronnie',
-            'The Outlaw Torn'
+            { name: 'Ain\'t My Bitch', categories: ['rebellious', 'energetic'] },
+            { name: '2 X 4', categories: ['aggressive', 'dark'] },
+            { name: 'The House Jack Built', categories: ['dark', 'introspective'] },
+            { name: 'Until It Sleeps', categories: ['melancholic', 'introspective'] },
+            { name: 'King Nothing', categories: ['dark', 'rebellious'] },
+            { name: 'Hero of the Day', categories: ['melancholic', 'introspective'] },
+            { name: 'Bleeding Me', categories: ['melancholic', 'epic'] },
+            { name: 'Cure', categories: ['dark', 'introspective'] },
+            { name: 'Poor Twisted Me', categories: ['melancholic', 'dark'] },
+            { name: 'Wasting My Hate', categories: ['rebellious', 'aggressive'] },
+            { name: 'Mama Said', categories: ['melancholic', 'introspective'] },
+            { name: 'Thorn Within', categories: ['dark', 'aggressive'] },
+            { name: 'Ronnie', categories: ['melancholic', 'introspective'] },
+            { name: 'The Outlaw Torn', categories: ['epic', 'melancholic'] }
         ]
     },
 
@@ -112,19 +112,19 @@ const albums = [
         title: "Reload",
         cover: 'Images/Reload.png',
         songs: [
-            'Fuel',
-            'The Memory Remains',
-            "Devil's Dance",
-            'The Unforgien II',
-            'Better Than You',
-            'Slither',
-            'Carpe Diem Baby',
-            'Bad Seed',
-            'Where the Wild Things Are',
-            'Prince Charming',
-            "Low Man's Lyric",
-            'Attitude',
-            'Fixxxer',
+             { name: 'Fuel', categories: ['energetic', 'classic'] },
+            { name: 'The Memory Remains', categories: ['dark', 'classic'] },
+            { name: 'Devil\'s Dance', categories: ['dark', 'aggressive'] },
+            { name: 'The Unforgiven II', categories: ['melancholic', 'introspective'] },
+            { name: 'Better Than You', categories: ['rebellious', 'aggressive'] },
+            { name: 'Slither', categories: ['dark', 'aggressive'] },
+            { name: 'Carpe Diem Baby', categories: ['rebellious', 'energetic'] },
+            { name: 'Bad Seed', categories: ['dark', 'aggressive'] },
+            { name: 'Where the Wild Things Are', categories: ['epic', 'dark'] },
+            { name: 'Prince Charming', categories: ['rebellious', 'aggressive'] },
+            { name: 'Low Man\'s Lyric', categories: ['melancholic', 'introspective'] },
+            { name: 'Attitude', categories: ['rebellious', 'aggressive'] },
+            { name: 'Fixxxer', categories: ['epic', 'introspective'] }
         ]
     },
 
@@ -133,17 +133,17 @@ const albums = [
         title: "St. anger",
         cover: 'Images/Stanger.png',
         songs: [
-            'Frantic',
-            'St. Anger',
-            'Some Kind of Monster',
-            'Dirty Window',
-            'Invisble Kid',
-            'My World',
-            'Shoot Me Again',
-            'Sweet Amber',
-            'The Unnamed Feeling',
-            'Purify',
-            'All Whithin My Hands'
+            { name: 'Frantic', categories: ['aggressive', 'rebellious'] },
+            { name: 'St. Anger', categories: ['aggressive', 'rebellious'] },
+            { name: 'Some Kind of Monster', categories: ['dark', 'introspective'] },
+            { name: 'Dirty Window', categories: ['aggressive', 'dark'] },
+            { name: 'Invisible Kid', categories: ['rebellious', 'aggressive'] },
+            { name: 'My World', categories: ['rebellious', 'aggressive'] },
+            { name: 'Shoot Me Again', categories: ['aggressive', 'rebellious'] },
+            { name: 'Sweet Amber', categories: ['melancholic', 'introspective'] },
+            { name: 'The Unnamed Feeling', categories: ['melancholic', 'introspective'] },
+            { name: 'Purify', categories: ['aggressive', 'dark'] },
+            { name: 'All Within My Hands', categories: ['aggressive', 'epic'] }
         ]
     },
 
@@ -152,16 +152,16 @@ const albums = [
         title: "Death magnetic",
         cover: 'Images/Deathmagnetic.jpg',
         songs: [
-            'That Was Just Your Life',
-            'The End of the Line',
-            'Broken, Beat & Scarred',
-            'The Day That Never Comes',
-            'All Nightmare Long',
-            'Cyanide',
-            'The Unforgiven III',
-            'The Judas Kiss',
-            'Suicide & Redemption',
-            'My Apocalypse'
+            { name: 'That Was Just Your Life', categories: ['aggressive', 'energetic'] },
+            { name: 'The End of the Line', categories: ['aggressive', 'rebellious'] },
+            { name: 'Broken, Beat & Scarred', categories: ['aggressive', 'rebellious'] },
+            { name: 'The Day That Never Comes', categories: ['melancholic', 'epic'] },
+            { name: 'All Nightmare Long', categories: ['dark', 'introspective'] },
+            { name: 'Cyanide', categories: ['dark', 'aggressive'] },
+            { name: 'The Unforgiven III', categories: ['melancholic', 'introspective'] },
+            { name: 'The Judas Kiss', categories: ['aggressive', 'dark'] },
+            { name: 'Suicide & Redemption', categories: ['epic', 'introspective'] },
+            { name: 'My Apocalypse', categories: ['aggressive', 'rebellious'] }
         ]
     },
 
@@ -170,38 +170,38 @@ const albums = [
         title: "Hardwired...to self-destruct",
         cover: 'Images/Hardwired.png',
         songs: [
-            'Hardwired',
-            'Atlas, Rise!',
-            "Now That We're Dead",
-            'Moth Into Flame',
-            'Dream No More',
-            'Halo on Fire',
-            'Confusion',
-            'ManUNkind',
-            'Here Comes Revenge',
-            'Am I Savage?',
-            'Murder One',
-            'Spit Out the Bone'
+            { name: 'Hardwired', categories: ['aggressive', 'energetic'] },
+            { name: 'Atlas, Rise!', categories: ['epic', 'energetic'] },
+            { name: 'Now That We\'re Dead', categories: ['aggressive', 'rebellious'] },
+            { name: 'Moth Into Flame', categories: ['aggressive', 'dark'] },
+            { name: 'Dream No More', categories: ['dark', 'introspective'] },
+            { name: 'Halo on Fire', categories: ['epic', 'melancholic'] },
+            { name: 'Confusion', categories: ['aggressive', 'introspective'] },
+            { name: 'ManUNkind', categories: ['rebellious', 'aggressive'] },
+            { name: 'Here Comes Revenge', categories: ['rebellious', 'aggressive'] },
+            { name: 'Am I Savage?', categories: ['dark', 'introspective'] },
+            { name: 'Murder One', categories: ['melancholic', 'introspective'] },
+            { name: 'Spit Out the Bone', categories: ['aggressive', 'energetic'] }
         ]
     },
 
         {
-        id: '72-easons',
+        id: '72-seasons',
         title: "72 seasons",
         cover: 'Images/72seasons.png',
         songs: [
-            '72 Seasons',
-            'Shadows Follow',
-            'Screaming Suicide',
-            'Sleepwalk My Life Away',
-            'You Must Burn!',
-            'Lux Æterna',
-            'Crown of Barbed Wire',
-            'Chasing Light',
-            'If Darkness Had a Son',
-            'Too Far Gone?',
-            'Room of Mirrors',
-            'Inamorata'
+             { name: '72 Seasons', categories: ['aggressive', 'energetic'] },
+            { name: 'Shadows Follow', categories: ['dark', 'introspective'] },
+            { name: 'Screaming Suicide', categories: ['aggressive', 'rebellious'] },
+            { name: 'Sleepwalk My Life Away', categories: ['melancholic', 'introspective'] },
+            { name: 'You Must Burn!', categories: ['aggressive', 'rebellious'] },
+            { name: 'Lux Æterna', categories: ['energetic', 'aggressive'] },
+            { name: 'Crown of Barbed Wire', categories: ['dark', 'aggressive'] },
+            { name: 'Chasing Light', categories: ['melancholic', 'introspective'] },
+            { name: 'If Darkness Had a Son', categories: ['dark', 'introspective'] },
+            { name: 'Too Far Gone?', categories: ['melancholic', 'introspective'] },
+            { name: 'Room of Mirrors', categories: ['introspective', 'melancholic'] },
+            { name: 'Inamorata', categories: ['epic', 'introspective'] }
         ]
     },
 
@@ -210,27 +210,27 @@ const albums = [
         title: "S&M",
         cover: 'Images/S&m.png',
         songs: [
-            'The Ecstasy of Gold',
-            'The Call of Ktulu',
-            'Master of Puppets',
-            'Of Wolf and Man',
-            'The Thing That Should Not Be',
-            'Fuel',
-            'The Memory Remains',
-            'No Leaf Clover',
-            'Hero of the Day',
-            "Devil's Dance",
-            'Bleeding Me',
-            'Nothing Else Matters',
-            'Until It Sleeps',
-            'For Whom the Bell Tolls',
-            'Human',
-            'Wherever I May Roam',
-            'Outlaw Torn',
-            'Sad but True',
-            'One',
-            'Enter Sandman',
-            'Battery'
+            { name: 'The Ecstasy of Gold', categories: ['epic', 'classic'] },
+            { name: 'The Call of Ktulu', categories: ['epic', 'introspective'] },
+            { name: 'Master of Puppets', categories: ['epic', 'classic'] },
+            { name: 'Of Wolf and Man', categories: ['dark', 'energetic'] },
+            { name: 'The Thing That Should Not Be', categories: ['dark', 'introspective'] },
+            { name: 'Fuel', categories: ['energetic', 'classic'] },
+            { name: 'The Memory Remains', categories: ['dark', 'classic'] },
+            { name: 'No Leaf Clover', categories: ['epic', 'melancholic'] },
+            { name: 'Hero of the Day', categories: ['melancholic', 'introspective'] },
+            { name: 'Devil\'s Dance', categories: ['dark', 'aggressive'] },
+            { name: 'Bleeding Me', categories: ['melancholic', 'epic'] },
+            { name: 'Nothing Else Matters', categories: ['melancholic', 'classic'] },
+            { name: 'Until It Sleeps', categories: ['melancholic', 'introspective'] },
+            { name: 'For Whom the Bell Tolls', categories: ['classic', 'dark'] },
+            { name: 'Human', categories: ['melancholic', 'introspective'] },
+            { name: 'Wherever I May Roam', categories: ['dark', 'introspective'] },
+            { name: 'Outlaw Torn', categories: ['epic', 'melancholic'] },
+            { name: 'Sad but True', categories: ['dark', 'classic'] },
+            { name: 'One', categories: ['melancholic', 'classic'] },
+            { name: 'Enter Sandman', categories: ['classic', 'energetic'] },
+            { name: 'Battery', categories: ['aggressive', 'classic'] }
         ]
     }
 ];
