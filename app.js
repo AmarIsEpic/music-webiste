@@ -10,6 +10,82 @@ const backBtn = document.getElementById('back-btn');
 const continueBtn = document.getElementById('continue-btn');
 const selectedCountSpan = document.getElementById('selected-count');
 
+
+function analyzeCategoryScores() {
+    const scores = {
+        aggressive: 0,
+        melancholic: 0,
+        epic: 0,
+        dark: 0,
+        rebellious: 0,
+        introspective: 0,
+        energetic: 0,
+        classic: 0
+    };
+
+    selectedSongs.forEach(song => {
+        song.categories.forEach((category, index) => {
+            scores[category] += (index === 0) ? 2 : 1;
+        });
+    });
+
+    return scores;
+}
+
+function determinePersonality(scores) {
+    const sortedCategories = Object.entries(scores)
+    .sort((a, b) => b[1] - a[1])
+    .map(entry => entry[0]);
+
+    const top1 = sortedCategories[0];
+    const top2 = sortedCategories[1];
+
+    if((top1 === 'aggressive' || top2 === 'aggressive') &&
+    (top1 === 'energetic' || top2 === 'energetic')) {
+        return 'thrasher';
+    }
+
+    if((top1 === 'dark' || top2 === 'dark') &&
+    (top1 === 'melancholic' || top2 === 'melancholic')) {
+        return 'dark_soul';
+    }
+
+    if((top1 === 'introspective' || top2 === 'introspective') &&
+    (top1 === 'epic' || top2 === 'epic')) {
+        return 'philosopher';
+    }
+
+    if((top1 === 'epic' || top2 === 'epic') &&
+    (top1 === 'classic' || top2 === 'classic')) {
+        return 'arena_warrior';
+    }
+
+    if((top1 === 'rebellious' || top2 === 'rebellious') &&
+    (top1 === 'aggressive' || top2 === 'aggressive')) {
+        return 'rebel';
+    }
+
+    if((top1 === 'melancholic' || top2 === 'melancholic') &&
+    (top1 === 'classic' || top2 === 'classic')) {
+        return 'romanticist';
+    }
+
+    if((top1 === 'aggressive' || top2 === 'aggressive') &&
+    (top1 === 'classic' || top2 === 'classic')) {
+        return 'purist';
+    }
+
+    if((top1 === 'energetic' || top2 === 'energetic') &&
+    (top1 === 'rebellious' || top2 === 'rebellious')) {
+        return 'headbanger';
+    }
+
+    if(top1 === 'epic' || top2 === 'epic') {
+        return 'epicist';
+    }
+
+    return 'thrasher';
+}
 function init() {
     renderAlbumGrid();
     setupEventListeners();
