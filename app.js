@@ -97,7 +97,7 @@ function getRandomPersonalityResult(personalityKey) {
         title: personality.title,
         tagline: randomTagLine,
         description: randomDescription,
-        recommendations: personality.recommendations;
+        recommendations: personality.recommendations,
     }
 }
 function init() {
@@ -141,28 +141,28 @@ function renderSongList(albumId) {
     songList.innerHTML = '';
     albumTitle.textContent = album.title;
 
-    album.songs.forEach(songName => {
-        const songItem = createSongItem(albumId, songName);
+    album.songs.forEach(song => {
+        const songItem = createSongItem(albumId, song);
         songList.appendChild(songItem);
     });
 }
 
-function createSongItem(albumId, songName) {
+function createSongItem(albumId, song) {
     const li = document.createElement('li');
     li.className = 'song-item';
 
     const isSelected = selectedSongs.some(
-        s => s.albumId === albumId && s.songName === songName
+        s => s.albumId === albumId && s.songName === song.name
     );
 
     if(isSelected) {
         li.classList.add('selected');
     }
 
-    li.innerHTML = `<div class="song-name">${songName}</div>`;
+    li.innerHTML = `<div class="song-name">${song.name}</div>`;
 
     li.addEventListener('click', () => {
-        selectSong(albumId, songName);
+        selectSong(albumId, song);
     });
 
     return li;
@@ -187,17 +187,29 @@ function navigateToHome() {
     window.scrollTo(0,0);
 }
 
-function selectSong(albumId, songName) {
+function selectSong(albumId, song) {
+
+    const MAX_SONGS = 3;
+
     const existingIndex = selectedSongs.findIndex(
-        s => s.albumId === albumId && s.songName === songName
+        s => s.albumId === albumId && s.songName === song.name
     );
 
     if(existingIndex === -1) {
-        selectedSongs.push({ albumId, songName });
+        if(selectedSongs.length >= MAX_SONGS) {
+            alert(`You can only select ${MAX_SONGS} songs!`);
+            return;
+        }
+
+        selectedSongs.push({
+            albumId,
+            songName: song.name,
+            categories: song.categories });
     }
     else {
         selectedSongs.splice(existingIndex, 1);
     }
+
     updateSelectedCount();
     navigateToHome();
 }
@@ -206,7 +218,7 @@ function updateSelectedCount() {
     const count = selectedSongs.length;
     selectedCountSpan.textContent = count;
 
-    if(count > 0){
+    if(count === 3){
         continueBtn.disabled = false;
     } else {
         continueBtn.disabled = true;
@@ -219,9 +231,8 @@ function setupEventListeners() {
     });
 
     continueBtn.addEventListener('click', () => {
-        if(selectedSongs.length > 0) {
-            console.log('Continue clicked with songs:', selectedSongs);
-            alert('Continue functionality coming soon');
+        if(selectedSongs.length === 3) {
+            showPersonalityResult();
         }
     });
 }
@@ -248,6 +259,60 @@ function createPopup(result) {
 
     const popup = document.createElement('div');
     popup.className = 'popup';
+
+    popup.innerHTML = `
+    <button class="popup-close" id="popup-close">✕</button>
+    
+    <h2 class="popup-header">YOUR PERSONALITY</h2>
+    
+    <div class="popup-divider"></div>
+    
+    <h3 class="popup-title">${result.title}</h3>
+    
+    <p class="popup-tagline">"${result.tagline}"</p>
+    
+    <p class="popup-description">${result.description}</p>
+    
+    <div class="popup-divider"></div>
+    
+    <h4 class="popup-recommendations-title">SONGS YOU MIGHT LOVE:</h4>
+    <ul class="popup-recommendations">
+        ${result.recommendations.map(song => `<li>• ${song}</li>`).join('')}
+    </ul>
+    
+    <div class="popup-divider"></div>
+    
+    <div class="popup-buttons">
+        <button class="popup-btn popup-btn-restart" id="popup-restart">START OVER</button>
+    </div>`;
+
+    overlay.appendChild(popup);
+    document.body.appendChild(overlay);
+
+    document.getElementById('popup-close').addEventListener('click', closePopup);
+    document.getElementById('popup-restart').addEventListener('click', restartSelection);
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) closePopup();
+    });
+
+    setTimeout(() => {
+        overlay.classList.add('active');
+    }, 10);
+}
+
+function closePopup() {
+    const overlay = document.querySelector('.popup-overlay');
+    if(overlay) {
+        overlay.classList.remove('active');
+        setTimeout(() => {
+            overlay.remove();
+        }, 300);
+    }
+}
+
+function restartSelection() {
+    clearSelections();
+    closePopup();
 }
 
 function getSelectedSongs() {
