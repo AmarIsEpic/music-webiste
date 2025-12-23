@@ -86,6 +86,20 @@ function determinePersonality(scores) {
 
     return 'thrasher';
 }
+
+function getRandomPersonalityResult(personalityKey) {
+    const personality = personalities[personalityKey];
+
+    const randomTagLine = personality.taglines[Math.floor(Math.random() * personality.taglines.length)];
+    const randomDescription = personality.descriptions[Math.floor(Math.random()*personality.descriptions.length)];
+
+    return {
+        title: personality.title,
+        tagline: randomTagLine,
+        description: randomDescription,
+        recommendations: personality.recommendations;
+    }
+}
 function init() {
     renderAlbumGrid();
     setupEventListeners();
@@ -216,6 +230,24 @@ if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
 } else {
     init();
+}
+
+function showPersonalityResult () {
+    const scores = analyzeCategoryScores();
+
+    const personalityKey = determinePersonality(scores);
+
+    const result = getRandomPersonalityResult(personalityKey);
+
+    createPopup(result);
+}
+
+function createPopup(result) {
+    const overlay = document.createElement('div');
+    overlay.className = 'popup-overlay';
+
+    const popup = document.createElement('div');
+    popup.className = 'popup';
 }
 
 function getSelectedSongs() {
